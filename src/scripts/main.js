@@ -1,17 +1,31 @@
-class Container {
+let winSize;
+const getWinSize = () => winSize = { width: window.innerWidth, height: window.innerHeight};
+getWinSize()
 
+$(window).on("resize", getWinSize);
+
+gridConfig = {
+  amount:12
+}
+
+class Grid {
   constructor(el) {
-    this.el = $(el)
+    this.el = $(el);
 
     this.init()
   }
 
   init() {
-    TweenLite.to(this.el, 2, {  left:100,   top: 75,   backgroundColor:"#412",   ease: Power4.easeIn});
+   this.attachLine()
   }
 
+  attachLine(width) {
+    for (let index = 0; index < gridConfig.amount; index++) {
+      this.el.append("<div class='line'></div>")
+    }
+  }
 }
 
 (function($){ 
-  var container = new Container("#box")
+  var grid = new Grid(".container");
 })(jQuery);
