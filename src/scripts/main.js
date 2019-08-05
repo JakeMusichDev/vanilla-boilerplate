@@ -13,8 +13,5 @@ class Container {
 }
 
 (function($){ 
-
   var container = new Container("#box")
-
-  console.log('test');
 })(jQuery);
