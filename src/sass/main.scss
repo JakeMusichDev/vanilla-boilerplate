@@ -18,17 +18,18 @@ body {
 
 .container {
   max-width: 960px;
-  height: 100vh;
+  height: 70vh;
   margin: 0 auto;
   padding: 10px;
   border:1px solid white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   .line {
-    width: 10px;
+    width: 1px;
     background: #000;
-    height: 100vh;
+    height: 0%;
+    opacity: 0;
   }
 }
 
