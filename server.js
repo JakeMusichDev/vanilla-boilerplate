@@ -30,13 +30,16 @@ app.use(express.static(__dirname + '/dist'));
 // Routes
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + "/src/index.html")));
 
-app.get('/api', (req, res) => {
-  let route = process.env.API_URL + "latest?access_key=" + process.env.API_KEY;
-
+app.get('/rates', (req, res) => {
+  let route = "http://data.fixer.io/api/latest?access_key=" + process.env.API_KEY;
+ 
   axios.get(route)
-    .then(res => res.json())
-    .then(data => res.send({ data }))
-    .catch(err => res.redirect('/error'))
+    .then(response => { 
+      res.send( response.data ) 
+    })
+    .catch(err => {
+      res.send(err)
+    })
 });
 
 // Port Attachment
