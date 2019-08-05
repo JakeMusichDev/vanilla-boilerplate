@@ -7,7 +7,7 @@ class Container {
   }
 
   init() {
-    TweenLite.to(this.el, 2, {  left:100,   top: 75,   backgroundColor:"#23ff",   ease: Power4.easeIn});
+    TweenLite.to(this.el, 2, {  left:100,   top: 75,   backgroundColor:"#412",   ease: Power4.easeIn});
   }
 
 }

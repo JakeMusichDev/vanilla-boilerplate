@@ -1,4 +1,5 @@
 var {src, dest, series, watch} = require('gulp'),
+    uglify = require('gulp-uglify'),
     babel = require('gulp-babel'),
     plumber = require('gulp-plumber'),
     sass = require('gulp-sass'),
@@ -39,6 +40,7 @@ var javascript = function() {
             ['@babel/env', { modules: false }]
           ]
         }))
+        .pipe(uglify())
         .pipe(dest(paths.scripts.output))
 };
 
@@ -54,8 +56,6 @@ var watchAll = function() {
     watch(paths.styles.input, styles);
 };
 
-exports.default = series(cleanDist, javascript, styles);
-
+exports.default = series(cleanDist, javascript, styles, watchAll);
 exports.watch = watchAll;
-
 exports.clean = cleanDist;

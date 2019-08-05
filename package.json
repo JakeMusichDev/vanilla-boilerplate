@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently \"npm:watch-*\"",
     "watch-node": "nodemon server.js",
-    "watch-gulp": "gulp watch"
+    "watch-gulp": "gulp",
+    "clean": "gulp clean"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,8 @@
     "gulp-babel": "^8.0.0",
     "gulp-cssbeautify": "^1.0.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
     "concurrently": "^4.1.1",
