@@ -28,7 +28,7 @@ class Grid {
 
   init() {
     this.attachLines()
-    
+
     this.el.click(() => this.wiggle())
   }
 
@@ -39,15 +39,15 @@ class Grid {
       let dur = MathUtils.getRandomFloat(0, 2);
       TweenMax.to(line, dur, {height: "80%", opacity: 1})
     });
-    
-
   }
 
   attachLines(width) {
     for (let index = 0; index < gridConfig.amount; index++) {
       this.el.append("<div class='line'></div>")
     }
+
     this.lines = $(".line");
+
     this.animateLines()
   }
 

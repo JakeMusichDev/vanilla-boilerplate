@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm:watch-*\"",
+    "start": "concurrently \"npm:watch-*\" \"open http://localhost:3000\" ",
     "watch-node": "nodemon server.js",
     "watch-gulp": "gulp",
     "clean": "gulp clean"
