@@ -33,7 +33,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname + "/src/index.html")
 app.get('/rates', (req, res) => {
   let route = "http://data.fixer.io/api/latest?access_key=" + process.env.API_KEY;
  
-  axios.get(route)
+  axios.get(route) 
     .then(response => { 
       res.send( response.data ) 
     })
