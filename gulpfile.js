@@ -1,5 +1,6 @@
 var {src, dest, series, watch} = require('gulp'),
     uglify = require('gulp-uglify'),
+    terser = require('gulp-terser'),
     babel = require('gulp-babel'),
     plumber = require('gulp-plumber'),
     sass = require('gulp-sass'),
@@ -36,11 +37,9 @@ var javascript = function() {
     return src(paths.scripts.input)
         .pipe(plumber())
         .pipe(babel({
-          presets: [
-            ['@babel/env', { modules: false }]
-          ]
+          presets: [['@babel/env', { modules: false }]]
         }))
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(dest(paths.scripts.output))
 };
 

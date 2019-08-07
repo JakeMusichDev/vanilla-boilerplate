@@ -4,11 +4,7 @@ getWinSize()
 
 $(window).on("resize", getWinSize);
 
-gridConfig = {
-  amount:12
-}
-
-
+// Utility functions
 const MathUtils = {
   lineEq: (y2, y1, x2, x1, currentVal) => {
       // y = mx + b 
@@ -19,6 +15,11 @@ const MathUtils = {
   getRandomFloat: (min, max) => (Math.random() * (max - min) + min).toFixed(2)
 };
 
+gridConfig = {
+  amount:12
+}
+
+// Grid component with logic
 class Grid {
   constructor(el) {
     this.el = $(el);
@@ -59,8 +60,20 @@ class Grid {
     });
     this.isAnimating = false;
   }
-}
+};
 
-(function($){ 
+class Swiper {
+  constructor(el) {
+    this.DOM.image = $(el)
+  }
+  
+
+
+
+};
+
+
+(function($){
   var grid = new Grid(".container");
+
 })(jQuery);
