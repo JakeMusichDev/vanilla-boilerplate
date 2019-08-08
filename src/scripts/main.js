@@ -64,16 +64,29 @@ class Grid {
 
 class Swiper {
   constructor(el) {
-    this.DOM.image = $(el)
+    this.DOM = $(el)
+    this.DOM.on("click", () => this.clearOverlay())
+    this.addOverlay();
   }
   
+  addOverlay() {
+    this.DOM.after("<div class='overlay'></div>")
+    this.DOM.overlay = this.DOM.next()
+  }
 
-
+  clearOverlay() {
+    TweenMax.to(this.DOM.overlay, .1, {scale:2})
+  }
+ 
 
 };
 
-
 (function($){
-  var grid = new Grid(".container");
+  // var grid = new Grid(".container"),
+    var imgs = Array.from( $(".container img") );
+  
+  imgs.forEach(img => {
+    let wrappedImg = new Swiper(img)
+  });
 
 })(jQuery);
